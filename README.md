@@ -13,30 +13,14 @@ The **AI-RFP-System** consists of two major components:
 This project is designed to resemble real enterprise RFP automation software used in procurement, enterprise sales, and vendor management.
 
 ## Project Structure
-```pgsql
+```perl
 ai-rfp-system/
-│
-├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── core/
-│   │   ├── models/
-│   │   ├── schemas/
-│   │   ├── services/
-│   │   └── utils/
-│   ├── requirements.txt
-│   └── README.md
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── README.md
-│
-└── README.md   ← (This file)
+  backend/
+  frontend/
+  README.md
 ```
 
 ## Features
-
 1. **AI-based Proposal Scoring**
     - LLM-based semantic similarity scoring
     - Weighted scoring by category (tech, pricing, compliance, SLA, etc.)
@@ -53,14 +37,80 @@ ai-rfp-system/
         - Strengths & weaknesses
         - Risk flags
         - Summary report
-4. **Workflow Automation**(Future Goal)
+4. **Workflow Automation** (Future Goal)
     - Status tracking: Draft → Published → Under Review → Awarded
     - Role-based access (Admin, Reviewer, Vendor)
-5. **Dashboards & Analytics**(Future Goal)
+5. **Dashboards & Analytics** (Future Goal)
     - Proposal comparison
     - Heatmaps
     - Time taken to evaluate
     - Category-weight analytics
+  
+
+## Tech Stack
+### Backend (FastAPI)
+- Node.js
+- Express.js
+- Nodemailer (email send)
+- IMAP-Simple (email receiving)
+- OpenAI API
+- PostgreSQL (via pg) or MongoDB (via mongoose)
+
+### Frontend (React)
+- React + Vite
+- TailwindCSS
+- Axios
+- Zustand / Redux
+
+### Database
+- PostgreSQL
+
+## Project Setup
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm
+- PostgreSQL
+- OpenAI API Key
+- Email account for SMTP + IMAP
+  - (Gmail, Outlook, or any SMTP provider)
+
+### Backend Setup
+```bash
+cd backend
+npm install
+```
+Create .env:
+```ini
+OPENAI_KEY=your_key_here
+
+# Database
+DB_URL=your_database_url
+
+# Email sending/receiving
+SMTP_USER=your_email@example.com
+SMTP_PASS=your_smtp_password
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+
+IMAP_HOST=imap.gmail.com
+IMAP_PORT=993
+```
+Start backend:
+```bash
+npm run dev
+```
+
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm start
+```
+
+
+
+
+
 
 
 
