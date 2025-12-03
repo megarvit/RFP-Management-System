@@ -4,10 +4,10 @@ An end-to-end AI-powered platform that automates the entire Request for Proposal
 ## Overview
 The **AI-RFP-System** consists of two major components:
 
-- *Backend* (Python/FastAPI)
+- *Backend*
   - Handles authentication, RFP ingestion, AI scoring, versioning, workflows, and database management.
 
-- *Frontend* (React + Tailwind)
+- *Frontend*
   - A clean UI for creating RFPs, reviewing AI-generated scores, managing proposals, and tracking status.
 
 This project is designed to resemble real enterprise RFP automation software used in procurement, enterprise sales, and vendor management.
