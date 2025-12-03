@@ -177,6 +177,24 @@ During development:
       - Email parsing logic
       - Few debugging cases
 
+## Core System Flow
+1. **Create an RFP**
+    - Add sections → Add questions → Add weights
+2. **Invite Vendors**
+    - Vendors get a link to submit proposal responses
+    - They answer questions in structured format
+3. **AI Evaluation**
+    - AI compares each vendor answer to expected answer
+    - Generates:
+        - Score (0–100)
+        - Reasoning
+        - Risk level
+        - Missing information
+4. **Committee Review**
+     - Human reviewers can override AI scores
+     - Compare vendors
+     - Finalize winner
+
 ## Future Improvements
   - Vendor portal login
   - Multi-user authentication
