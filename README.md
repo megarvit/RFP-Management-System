@@ -48,7 +48,7 @@ ai-rfp-system/
   
 
 ## Tech Stack
-### Backend (FastAPI)
+### Backend
 - Node.js
 - Express.js
 - Nodemailer (email send)
