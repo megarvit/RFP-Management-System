@@ -107,8 +107,82 @@ npm install
 npm start
 ```
 
+### Email Configuration
 
+To enable email sending + receiving:
+- Enable “App Passwords” or “Less secure apps” (depending on provider)
+- Add SMTP + IMAP credentials to your .env
+- Backend uses **Nodemailer** for send
+- Backend uses **IMAP** for receiving vendor replies
 
+### Running Locally
+1. Start Database
+2. Start Backend
+3. Start Frontend
+4. Open browser at:
+    ```arduino
+    http://localhost:3000
+    ```
+
+## API Documentation (Starter)
+1. POST /api/rfp/create
+   - Create structured RFP from natural language.
+
+  **Body**
+  ```json
+  { "text": "We need 20 laptops..." }
+  ```
+  **Response**
+  ```json
+  {
+    "id": "123",
+    "title": "Laptop & Monitor Procurement",
+    "budget": 50000,
+    "items": [...],
+    "delivery": "30 days"
+  }
+  ```
+2. POST /api/vendors
+   - Add a vendor.
+3. POST /api/rfp/:id/send
+   - Send RFP email to selected vendors.
+4. GET /api/email/fetch
+   - Fetch vendor email replies.
+5. GET /api/rfp/:id/comparison
+   - AI-based vendor proposal comparison.
+
+## Key Decisions & Assumptions
+
+### Modeling
+  - RFP stored as structured JSON (title, budget, items, terms)
+  - Vendor proposals linked by *rfpId*
+  - Email replies parsed with AI
+
+### AI Usage
+  - Convert natural language → structured RFP
+  - Extract vendor proposal details from messy emails
+  - Compare proposals and generate recommendation summary
+
+### Assumptions
+  - One user (single-tenant)
+  - Emails arrive in plain text or simple attachments
+  - Vendors respond with basic numbers/terms
+  - No authentication required
+
+## AI Tools Usage
+During development:
+  - **ChatGPT** used for:
+      - Boilerplate code generation
+      - Prompt design for structured output
+      - Email parsing logic
+      - Few debugging cases
+
+## Future Improvements
+  - Vendor portal login
+  - Multi-user authentication
+  - Versioning & approvals
+  - Attachment parsing (PDF, CSV)
+  - Multi-RFP dashboards
 
 
 
