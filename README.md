@@ -11,3 +11,26 @@ The **AI-RFP-System** consists of two major components:
   - A clean UI for creating RFPs, reviewing AI-generated scores, managing proposals, and tracking status.
 
 This project is designed to resemble real enterprise RFP automation software used in procurement, enterprise sales, and vendor management.
+
+## Project Structure
+```pgsql
+ai-rfp-system/
+│
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── core/
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   └── utils/
+│   ├── requirements.txt
+│   └── README.md
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── README.md
+│
+└── README.md   ← (This file)
+```
